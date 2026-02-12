@@ -1,0 +1,26 @@
+# dependências
+node_modules/
+
+# builds
+dist/
+build/
+
+# cache / logs
+*.log
+*.tsbuildinfo
+
+# sistema
+.DS_Store
+
+# env
+.env
+.env.*
+
+# server (se for gerado em runtime)
+server/public/
+
+# arquivos empacotados
+*.tar.gz
+
+# configs gerados
+vite.config.ts.*
