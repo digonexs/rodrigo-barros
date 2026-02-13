@@ -33,7 +33,7 @@ export function About() {
                   <span className="text-sm uppercase tracking-widest font-bold text-muted-foreground">{t("about.stats.years")}</span>
                 </div>
                 <div className="space-y-2">
-                  <span className="block text-4xl font-black text-primary font-heading">60+</span>
+                  <span className="block text-4xl font-black text-primary font-heading">200+</span>
                   <span className="text-sm uppercase tracking-widest font-bold text-muted-foreground">{t("about.stats.features")}</span>
                 </div>
                 <div className="space-y-2">

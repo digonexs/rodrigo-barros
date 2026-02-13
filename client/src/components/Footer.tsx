@@ -16,7 +16,7 @@ export function Footer() {
         </div>
         
         <div className="text-center md:text-right text-sm text-muted-foreground">
-          <p>&copy; {year} Rodrigo Cavalcante. {t("footer.rights")}</p>
+          <p>&copy; {year} Rodrigo Cavalcante de Barros. {t("footer.rights")}</p>
           <p>
             {t("footer.developed_by")}{" "}
             <a href="https://www.linkedin.com/in/rodrigocavalcantedebarros/" className="text-primary font-medium hover:underline">

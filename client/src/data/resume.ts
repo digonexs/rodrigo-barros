@@ -9,14 +9,14 @@ import { FaJava, FaCode, FaServer, FaDatabase, FaMicrosoft } from "react-icons/f
 export interface Experience {
   id: string;
   role: { pt: string; en: string; es: string };
-  company: string;
+  company: { pt: string; en: string; es: string };
   period: { pt: string; en: string; es: string };
   description: { pt: string[]; en: string[]; es: string[] };
 }
 
 export interface Project {
   id: string;
-  title: string;
+  title: { pt: string; en: string; es: string };
   description: { pt: string; en: string; es: string };
   tech: string[];
   github?: string;
@@ -67,7 +67,7 @@ export const experience: Experience[] = [
   {
     id: "1",
     role: { pt: "Engenheiro de Software", en: "Software Engineer", es: "Ingeniero de Software" },
-    company: "Hypeone | NEOBPO (Projeto Comgás)",
+    company: { pt: "Hypeone | NEOBPO (Projeto Comgás)", en: "Hypeone | NEOBPO (Comgás Project)", es: "Hypeone | NEOBPO (Proyecto Comgás)" },
     period: { pt: "Set 2024 - Atual", en: "Sep 2024 - Present", es: "Sep 2024 - Actualidad" },
     description: {
       pt: [
@@ -93,7 +93,7 @@ export const experience: Experience[] = [
   {
     id: "2",
     role: { pt: "Desenvolvedor de Software", en: "Software Developer", es: "Desarrollador de Software" },
-    company: "Foursys (Projeto Banco Bradesco)",
+    company: { pt: "Foursys (Projeto Banco Bradesco)", en: "Foursys (Bradesco Bank Project)", es: "Foursys (Proyecto Banco Bradesco)" },
     period: { pt: "Fev 2023 - Set 2024", en: "Feb 2023 - Sep 2024", es: "Feb 2023 - Sep 2024" },
     description: {
       pt: [
@@ -119,7 +119,7 @@ export const experience: Experience[] = [
   {
     id: "3",
     role: { pt: "Desenvolvedor de Software Trainee", en: "Software Developer Trainee", es: "Desarrollador de Software Trainee" },
-    company: "Foursys",
+    company: { pt: "Foursys", en: "Foursys", es: "Foursys"},
     period: { pt: "Nov 2021 - Fev 2023", en: "Nov 2021 - Feb 2023", es: "Nov 2021 - Feb 2023" },
     description: {
       pt: [
@@ -174,14 +174,41 @@ export const certifications: Certificate[] = [
 export const projects: Project[] = [
   {
     id: "1",
-    title: "Portfolio Pessoal",
+    image: "portfolio-pessoal.png",
+    title: { pt: "Portfólio Pessoal", en: "Personal Portfolio", es: "Portafolio Personal" },
     description: {
       pt: "Site de portfólio pessoal moderno e responsivo com internacionalização e modo escuro.",
       en: "Modern and responsive personal portfolio website with internationalization and dark mode.",
       es: "Sitio web de portafolio personal moderno y receptivo con internacionalización y modo oscuro."
     },
     tech: ["React", "TypeScript", "Tailwind CSS", "i18next"],
-    github: "https://github.com/digonexs/portifolio-v1",
+    github: "https://github.com/digonexs/rodrigo-barros",
     demo: "#"
+  },
+  {
+    id: "2",
+    image: "lading-page-cidai.png",
+    title: { pt: "Landing Page CIDAI", en: "Landing Page CIDAI", es: "Landing Page CIDAI" },
+    description: {
+      pt: "Landing page do projeto social CIDAI com sistema de cadastro, envio automático de mensagens via WhatsApp ao responsável e emissão de certificados.",
+      en: "Landing page for the CIDAI social project with a registration system, automatic WhatsApp message delivery to the responsible party, and certificate issuance.",
+      es: "Landing page del proyecto social CIDAI con sistema de registro, envío automático de mensajes por WhatsApp al responsable y emisión de certificados."
+    },
+    tech: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    github: "https://github.com/digonexs/cidai-project",
+    demo: "https://cidai-project.vercel.app/"
+  },
+  {
+    id: "3",
+    image: "routineflow.png",
+    title: { pt: "RoutineFlow", en: "RoutineFlow", es: "RoutineFlow" },
+    description: {
+      pt: "Aplicação web mobile-first para rastreamento de hábitos e rotinas semanais. O app permite que usuários criem tarefas recorrentes para cada dia da semana, acompanhem seu progresso diário e visualizem sua consistência através de um mapa de calor interativo.",
+      en: "Mobile-first web application for tracking habits and weekly routines. The app allows users to create recurring tasks for each day of the week, track their daily progress, and visualize their consistency through an interactive heatmap.",
+      es: "Aplicación web mobile-first para el seguimiento de hábitos y rutinas semanales. La app permite a los usuarios crear tareas recurrentes para cada día de la semana, seguir su progreso diario y visualizar su constancia a través de un mapa de calor interactivo."
+    },
+    tech: ["React", "TypeScript", "Tailwind CSS", "Vite", "Supabase", "Framer Motion", "Shadcn/UI"],
+    github: "https://github.com/digonexs/routineflow",
+    demo: "https://routineflow-sepia.vercel.app/"
   },
 ];

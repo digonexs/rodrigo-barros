@@ -20,7 +20,7 @@ export function Hero() {
   };
 
   return (
-<section className="relative isolate min-h-screen flex items-center pt-20 overflow-hidden">
+<section className="relative isolate min-h-screen flex items-center pt-28 md:pt-32 overflow-hidden">
       <CodeBackground />
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">

@@ -52,7 +52,12 @@ const resources = {
         message: "Message",
         send: "Send Message",
         success: "Message sent successfully!",
-        error: "Something went wrong. Please try again."
+        error: "Something went wrong. Please try again.",
+        placeholders: {
+          name: "Your name",
+          email: "you@example.com",
+          message: "Hi, I'd like to discuss a project..."
+        }
       },
       footer: {
         rights: "All rights reserved.",
@@ -110,7 +115,12 @@ const resources = {
         message: "Mensagem",
         send: "Enviar Mensagem",
         success: "Mensagem enviada com sucesso!",
-        error: "Algo deu errado. Tente novamente."
+        error: "Algo deu errado. Tente novamente.",
+        placeholders: {
+          name: "Seu nome",
+          email: "seuemail@exemplo.com",
+          message: "Olá, gostaria de discutir um projeto..."
+        }
       },
       footer: {
         rights: "Todos os direitos reservados.",
@@ -168,7 +178,12 @@ const resources = {
         message: "Mensaje",
         send: "Enviar Mensaje",
         success: "¡Mensaje enviado con éxito!",
-        error: "Algo salió mal. Inténtalo de nuevo."
+        error: "Algo salió mal. Inténtalo de nuevo.",
+        placeholders: {
+          name: "Tu nombre",
+          email: "tucorreo@ejemplo.com",
+          message: "Hola, me gustaría hablar sobre un proyecto..."
+        }
       },
       footer: {
         rights: "Todos los derechos reservados.",

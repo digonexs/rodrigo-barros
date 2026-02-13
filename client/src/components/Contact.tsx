@@ -64,7 +64,7 @@ export function Contact() {
                       <FormItem>
                         <FormLabel>{t("contact.name")}</FormLabel>
                         <FormControl>
-                          <Input placeholder="Seu nome" {...field} />
+                          <Input placeholder={t("contact.placeholders.name")} {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -77,7 +77,7 @@ export function Contact() {
                       <FormItem>
                         <FormLabel>{t("contact.email")}</FormLabel>
                         <FormControl>
-                          <Input placeholder="seuemail@example.com" {...field} />
+                          <Input placeholder={t("contact.placeholders.email")} {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -91,7 +91,7 @@ export function Contact() {
                         <FormLabel>{t("contact.message")}</FormLabel>
                         <FormControl>
                           <Textarea 
-                            placeholder="Olá, gostaria de discutir um projeto..." 
+                            placeholder={t("contact.placeholders.message")}
                             className="min-h-[120px]"
                             {...field} 
                           />

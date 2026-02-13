@@ -26,9 +26,9 @@ export function Projects() {
 
         <div className="max-w-6xl mx-auto relative group">
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-6">
+            <div className="flex -ml-6">
               {projects.map((project, index) => (
-                <div key={project.id} className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] min-w-0">
+                <div key={project.id} className="pl-6 flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] min-w-0">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -39,26 +39,45 @@ export function Projects() {
                     <Card className="h-full flex flex-col hover:shadow-lg transition-all group border-muted bg-card/50 backdrop-blur-sm border-2">
                       <div className="h-48 bg-muted w-full relative overflow-hidden rounded-t-lg">
                         <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10" />
-                        <div className="w-full h-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-muted-foreground">
-                          <span className="text-4xl opacity-20 font-heading font-bold">RB</span>
-                        </div>
+
+                        {project.image ? (
+                          <img
+                            src={`/thumb/${project.image}`}
+                            alt={`Thumbnail do projeto ${project.title[lang]}`}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-muted-foreground">
+                            <span className="text-4xl opacity-20 font-heading font-bold">RB</span>
+                          </div>
+                        )}
                       </div>
 
                       <CardHeader>
-                        <CardTitle className="text-2xl font-black font-heading uppercase tracking-tight">{project.title}</CardTitle>
+                        <CardTitle className="text-2xl font-black font-heading uppercase tracking-tight">
+                          {project.title[lang]}
+                        </CardTitle>
                       </CardHeader>
+
                       <CardContent className="flex-grow space-y-4">
                         <p className="text-muted-foreground font-medium leading-relaxed">
                           {project.description[lang] || project.description.pt}
                         </p>
+
                         <div className="flex flex-wrap gap-2">
                           {project.tech.map((tech) => (
-                            <Badge key={tech} variant="secondary" className="bg-primary/10 text-primary font-bold border-none">
+                            <Badge
+                              key={tech}
+                              variant="secondary"
+                              className="bg-primary/10 text-primary font-bold border-none"
+                            >
                               {tech}
                             </Badge>
                           ))}
                         </div>
                       </CardContent>
+
                       <CardFooter className="pt-4 border-t gap-2">
                         {project.github && (
                           <Button variant="outline" size="sm" className="w-full font-bold border-2" asChild>
@@ -68,6 +87,7 @@ export function Projects() {
                             </a>
                           </Button>
                         )}
+
                         {project.demo && (
                           <Button size="sm" className="w-full font-bold" asChild>
                             <a href={project.demo} target="_blank" rel="noopener noreferrer">
@@ -84,7 +104,7 @@ export function Projects() {
             </div>
           </div>
 
-          {/* Navigation Arrows - Liquid Glass Style */}
+          {/* Navigation Arrows */}
           <Button 
             variant="ghost" 
             size="icon" 

@@ -58,7 +58,7 @@ export function Experience() {
                       <CardTitle className="text-2xl md:text-3xl font-black font-heading uppercase tracking-tight">{exp.role[lang] || exp.role.pt}</CardTitle>
                       <div className="flex items-center text-primary font-bold text-lg mt-2">
                         <Building className="w-5 h-5 mr-3" />
-                        {exp.company}
+                        {exp.company[lang]}
                       </div>
                     </CardHeader>
                     <CardContent>
