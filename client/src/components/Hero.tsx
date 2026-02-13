@@ -65,9 +65,6 @@ export function Hero() {
               <a href="https://www.linkedin.com/in/rodrigocavalcantedebarros/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                 <Linkedin className="h-7 w-7" />
               </a>
-              <a href="https://x.com/digonexs_dev" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                <SiX className="h-6 w-6" />
-              </a>
               <a href="mailto:rodrigocavalcantedebarros@hotmail.com" className="hover:text-primary transition-colors">
                 <Mail className="h-7 w-7" />
               </a>

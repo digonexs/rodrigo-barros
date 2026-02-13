@@ -12,7 +12,6 @@ export function Footer() {
         <div className="flex items-center gap-4 text-muted-foreground">
           <a href="https://github.com/digonexs" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors"><Github className="w-5 h-5" /></a>
           <a href="https://www.linkedin.com/in/rodrigocavalcantedebarros/" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors"><Linkedin className="w-5 h-5" /></a>
-          <a href="https://x.com/digonexs_dev" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors"><SiX className="w-4 h-4" /></a>
         </div>
         
         <div className="text-center md:text-right text-sm text-muted-foreground">
