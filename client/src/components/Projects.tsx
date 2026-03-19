@@ -104,8 +104,7 @@ export function Projects() {
             </div>
           </div>
 
-          {/* Navigation Arrows */}
-          <Button 
+          <Button
             variant="ghost" 
             size="icon" 
             onClick={scrollPrev} 

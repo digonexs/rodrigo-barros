@@ -26,7 +26,6 @@ export function Experience() {
         <h2 className="text-4xl md:text-5xl font-heading font-black uppercase tracking-tighter mb-20 text-center">{t("experience.title")}</h2>
 
         <div className="space-y-16 max-w-6xl mx-auto">
-          {/* ... (keep experience timeline as is) ... */}
           {experience.map((exp, index) => (
             <motion.div
               key={exp.id}
@@ -79,7 +78,6 @@ export function Experience() {
         </div>
 
         <div className="mt-32 max-w-6xl mx-auto space-y-24">
-          {/* Formação (Education) */}
           <div className="space-y-8 relative group">
             <div className="flex items-center justify-between border-b-4 border-primary pb-4">
               <h3 className="text-3xl font-heading font-black uppercase tracking-tighter flex items-center">
@@ -108,7 +106,6 @@ export function Experience() {
                 </div>
               </div>
 
-              {/* Navigation Arrows - Liquid Glass Style */}
               <Button 
                 variant="ghost" 
                 size="icon" 
@@ -128,7 +125,6 @@ export function Experience() {
             </div>
           </div>
 
-          {/* Certificações (Certifications) */}
           <div className="space-y-8 relative group">
             <div className="flex items-center justify-between border-b-4 border-primary pb-4">
               <h3 className="text-3xl font-heading font-black uppercase tracking-tighter flex items-center">
@@ -157,7 +153,6 @@ export function Experience() {
                 </div>
               </div>
 
-              {/* Navigation Arrows - Liquid Glass Style */}
               <Button 
                 variant="ghost" 
                 size="icon" 
@@ -181,4 +176,3 @@ export function Experience() {
     </section>
   );
 }
-import { FaJava } from "react-icons/fa";

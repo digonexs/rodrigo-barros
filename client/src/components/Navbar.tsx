@@ -51,12 +51,10 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        {/* Logo - Updated dynamic SVG with exact paths */}
         <a href="#" className="flex items-center group">
           <Logo className="h-12 w-auto text-primary transition-colors" />
         </a>
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-10">
           <div className="flex items-center gap-8">
             {navLinks.map((link) => (
@@ -77,7 +75,6 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <div className="flex items-center gap-4 md:hidden">
           <ThemeToggle />
           <LanguageSwitcher />
@@ -92,7 +89,6 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

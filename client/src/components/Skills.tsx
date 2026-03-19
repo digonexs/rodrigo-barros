@@ -15,7 +15,7 @@ export function Skills() {
 
   return (
     <section id="skills" className="relative isolate py-24 overflow-hidden">
-      <CodeBackground opacityClassName="opacity-[0.35]" />
+      <CodeBackground />
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-heading font-black uppercase tracking-tighter mb-4">{t("skills.title")}</h2>

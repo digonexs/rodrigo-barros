@@ -1,9 +1,5 @@
 import React, { useMemo } from "react";
 
-/**
- * Você pode trocar/editar os snippets aqui.
- * O componente vai quebrar em LINHAS e usar como "texto repetido" no fundo.
- */
 const javaCodeSnippets = [
   `public class BackendService {
   public void execute() {
@@ -57,9 +53,6 @@ public class Controller {
 }`,
 ];
 
-/**
- * Linha única repetida horizontalmente (efeito pattern).
- */
 function CodeLine({
   text,
   reverse = false,

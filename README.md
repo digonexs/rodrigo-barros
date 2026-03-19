@@ -1,109 +1,134 @@
-# Meu Portfólio — Rodrigo de Barros
+# Portfólio — Rodrigo de Barros
 
-Este é o meu portfólio pessoal, desenvolvido do zero para apresentar minha trajetória como Engenheiro de Software, meus projetos, habilidades e formas de contato. Todo o projeto foi construído com foco em performance, acessibilidade, internacionalização e uma experiência visual cuidadosa tanto no tema claro quanto no escuro.
+Portfólio pessoal desenvolvido do zero para apresentar minha trajetória como Engenheiro de Software, projetos, habilidades e formas de contato. Construído com foco em performance, acessibilidade, internacionalização e experiência visual cuidadosa em tema claro e escuro.
+
+---
 
 ## Visão Geral
 
-O site é uma Single Page Application (SPA) composta por seções: Hero, Sobre, Habilidades, Experiência, Projetos e Contato. Decidi manter tudo em uma única página para proporcionar uma navegação fluida e sem interrupções, com âncoras suaves entre as seções.
-
-A aplicação suporta três idiomas (Português, Inglês e Espanhol), alternância entre tema claro e escuro, e é totalmente responsiva para dispositivos móveis.
+Single Page Application (SPA) organizada em seções contínuas — Hero, Sobre, Habilidades, Experiência, Projetos e Contato — com navegação via âncoras suaves. Suporta três idiomas (Português, Inglês e Espanhol), alternância de tema claro/escuro e é totalmente responsiva.
 
 ---
 
 ## Stack Tecnológica
 
-### Frontend
-
-| Tecnologia | Versão | Motivo da escolha |
+| Tecnologia | Versão | Motivo |
 |---|---|---|
-| React | 19.2.0 | Biblioteca consolidada que domino bem; a versão 19 traz melhorias de performance com o compilador React Compiler |
-| TypeScript | 5.6.3 | Tipagem estática garante maior confiabilidade e facilita a manutenção do código |
-| Vite | 7.1.9 | Build tool extremamente rápida com HMR nativo, ideal para projetos frontend modernos |
-| Tailwind CSS | 4.1.14 | Nova versão com `@theme inline` e CSS Variables nativas, sem necessidade de `tailwind.config.ts` |
-| Framer Motion | 12.23.24 | Animações declarativas e fluidas com uma API intuitiva no React |
-| Wouter | 3.3.5 | Router minimalista (~2kb), suficiente para o escopo de uma SPA com poucas rotas |
-| React Query | 5.60.5 | Gerenciamento de estado assíncrono e cache, mesmo que o projeto seja majoritariamente estático |
-| React Hook Form + Zod | 7.66.0 + 3.25.76 | Combinação poderosa para validação de formulários com tipagem completa via Zod |
-| i18next + react-i18next | 25.8.4 + 16.5.4 | Solução madura para internacionalização; suporte a PT, EN e ES |
-| next-themes | 0.4.6 | Gerenciamento de tema sistema/claro/escuro com persistência via localStorage |
-| shadcn/ui + Radix UI | — | Componentes acessíveis, headless e totalmente customizáveis com Tailwind |
-| Embla Carousel | 8.6.0 | Carrossel leve e performático para as seções de Projetos, Educação e Certificações |
-| Lucide React + React Icons | 0.545.0 + 5.5.0 | Ícones SVG otimizados e tree-shakeable |
-| Sonner | 2.0.7 | Notificações toast modernas e elegantes |
+| React | 19.2.0 | Base consolidada; versão 19 traz melhorias de performance com o React Compiler |
+| TypeScript | 5.6.3 | Tipagem estática para maior confiabilidade e manutenibilidade |
+| Vite | 7.1.9 | Build tool rápida com HMR nativo |
+| Tailwind CSS | 4.1.14 | v4 com `@theme inline` e CSS Variables nativas — sem `tailwind.config.ts` |
+| Framer Motion | 12.23.24 | Animações declarativas e fluidas com API intuitiva |
+| Wouter | 3.3.5 | Router minimalista (~2 kb) — suficiente para SPA com poucas rotas |
+| TanStack Query | 5.60.5 | Gerenciamento de estado assíncrono e cache |
+| React Hook Form + Zod | 7.66.0 + 3.25.76 | Validação tipada de formulários com schema Zod |
+| i18next + react-i18next | 25.8.4 + 16.5.4 | Internacionalização com suporte a PT, EN e ES |
+| next-themes | 0.4.6 | Tema sistema/claro/escuro com persistência via localStorage |
+| shadcn/ui + Radix UI | — | Componentes headless, acessíveis e customizáveis com Tailwind |
+| Embla Carousel | 8.6.0 | Carrossel leve e performático para Projetos, Educação e Certificações |
+| Lucide React | 0.545.0 | Ícones SVG tree-shakeable |
+| React Icons | 5.5.0 | Ícones de tecnologias (Java, Spring, AWS, etc.) para a seção de Skills |
 
 ---
 
-## Arquitetura e Decisões Técnicas
+## Arquitetura
+
+O projeto é uma SPA 100% estática, sem backend próprio. Toda a lógica reside no cliente.
 
 ### Estrutura de Pastas
 
 ```
-meu-portifolio/
+portfolio-rodrigo/
 ├── client/
-│   ├── src/
-│   │   ├── components/        # Componentes de seção e UI
-│   │   │   └── ui/            # Componentes base do shadcn/ui
-│   │   ├── pages/             # Páginas roteáveis (Home, NotFound)
-│   │   ├── lib/               # Configurações globais (i18n, queryClient, utils)
-│   │   ├── hooks/             # Custom hooks (use-toast, use-mobile)
-│   │   ├── data/              # Dados estáticos (resume.ts)
-│   │   ├── App.tsx            # Raiz com providers e roteamento
-│   │   ├── main.tsx           # Entry point do React
-│   │   └── index.css          # Estilos globais e tokens de design
 │   ├── public/
-│   │   ├── assets/            # Imagem de perfil e currículos (PT, EN, ES)
-│   │   └── thumb/             # Thumbnails dos projetos
+│   │   ├── assets/            # Foto de perfil + currículos (PT, EN, ES)
+│   │   ├── thumb/             # Thumbnails dos projetos
+│   │   └── favicon.png
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── ui/            # Componentes base do shadcn/ui (apenas os utilizados)
+│   │   │   ├── Hero.tsx
+│   │   │   ├── Navbar.tsx
+│   │   │   ├── About.tsx
+│   │   │   ├── Skills.tsx
+│   │   │   ├── Experience.tsx
+│   │   │   ├── Projects.tsx
+│   │   │   ├── Contact.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   ├── ThemeToggle.tsx
+│   │   │   ├── LanguageSwitcher.tsx
+│   │   │   └── CodeBackground.tsx
+│   │   ├── pages/
+│   │   │   ├── Home.tsx       # Página principal — compõe todas as seções
+│   │   │   └── not-found.tsx  # Página 404
+│   │   ├── data/
+│   │   │   └── resume.ts      # Fonte única de dados: skills, experiências, projetos, educação
+│   │   ├── hooks/
+│   │   │   ├── use-toast.ts
+│   │   │   └── use-mobile.tsx
+│   │   ├── lib/
+│   │   │   ├── i18n.ts        # Configuração do i18next com traduções embutidas
+│   │   │   ├── queryClient.ts # Instância global do TanStack Query
+│   │   │   └── utils.ts       # Helper `cn` para merge de classes Tailwind
+│   │   ├── App.tsx            # Providers + roteamento
+│   │   ├── main.tsx           # Entry point
+│   │   └── index.css          # Tokens de design e estilos globais via @theme
 │   └── index.html             # HTML base com meta tags Open Graph
-├── vite.config.ts             # Configuração do Vite com aliases e plugins
-├── tsconfig.json              # Configuração TypeScript com path aliases
-├── postcss.config.js          # PostCSS com Tailwind e autoprefixer
-├── components.json            # Configuração do shadcn/ui
-└── vite-plugin-meta-images.ts # Plugin customizado para Open Graph
+├── vite.config.ts
+├── tsconfig.json
+├── postcss.config.js
+├── components.json            # Configuração do CLI do shadcn/ui
+└── vite-plugin-meta-images.ts # Plugin Vite customizado para Open Graph
 ```
 
-### Separação de Dados e Apresentação
+### Padrão de Separação de Dados e Apresentação
 
-Toda a informação do portfólio (experiências, habilidades, projetos, educação, certificações) está centralizada em `client/src/data/resume.ts`. Isso me permite atualizar o conteúdo em um único lugar sem tocar nos componentes. É uma decisão simples, mas que facilita muito a manutenção.
+Todo o conteúdo do portfólio — experiências, habilidades, projetos, educação e certificações — está centralizado em `client/src/data/resume.ts`. Os componentes apenas consomem esses dados, sem nenhum conteúdo embutido no JSX. Isso permite atualizar qualquer informação em um único lugar, sem tocar na camada de apresentação.
 
-### Internacionalização (i18n)
+Cada entidade de dado tem campos multilíngues (`{ pt, en, es }`), o que elimina a necessidade de arquivos de tradução separados para conteúdo estruturado.
 
-Configurei o i18next com três namespaces de tradução embutidos diretamente no `lib/i18n.ts`, sem necessidade de arquivos JSON externos ou carregamento assíncrono. Como o portfólio é relativamente pequeno, isso simplifica o build e elimina flashes de conteúdo não traduzido. O idioma padrão é detectado automaticamente pelo navegador e persiste entre sessões.
+---
 
-Os três idiomas disponíveis — Português, Inglês e Espanhol — foram escolhidos para alcançar tanto o mercado nacional quanto oportunidades internacionais.
-
-### Sistema de Temas
-
-Utilizei o `next-themes` com `attribute="class"` para alternar entre temas via classe CSS. O tema segue a preferência do sistema operacional por padrão. Defini dois conjuntos completos de CSS Variables no `index.css`: o tema claro tem um fundo quase branco com texto escuro, enquanto o tema escuro usa preto puro (`#000`) para maior contraste e uma estética mais profissional.
+## Decisões Técnicas
 
 ### Tailwind CSS v4
 
-Migrei para o Tailwind CSS v4, que traz mudanças significativas na configuração. Em vez do arquivo `tailwind.config.ts`, toda a customização de tokens (cores, raios, fontes) é feita via `@theme inline` diretamente no CSS, usando as CSS Custom Properties do browser nativamente. Isso resulta em um output CSS mais limpo e elimina a dependência de configuração em JavaScript.
+A v4 elimina o `tailwind.config.ts`. Toda a customização de tokens — cores, tipografia, raios de borda, animações — é declarada diretamente no `index.css` via `@theme inline`, usando CSS Custom Properties nativas. O resultado é um CSS mais limpo e sem dependência de configuração em JavaScript.
 
-### Tipografia
+### Internacionalização sem arquivos externos
 
-Escolhi duas fontes do Google Fonts:
-- **Inter** para textos e parágrafos: legível, moderna e amplamente usada em interfaces profissionais
-- **JetBrains Mono** para títulos e headings: traz uma personalidade de developer/tech sem perder a clareza
+As traduções de UI estão embutidas diretamente em `lib/i18n.ts` como objetos JavaScript, sem carregamento assíncrono de arquivos JSON. Para um portfólio de escopo fixo, isso elimina flashes de conteúdo não traduzido e simplifica o build. Os dados de conteúdo (bio, descrições de projetos, experiências) usam campos `{ pt, en, es }` diretamente nas interfaces de `resume.ts`.
 
-### Animações com Framer Motion
+### Sistema de Temas
 
-As animações foram pensadas para serem sutis e não distrativas. Usei `variants` com `staggerChildren` para animar listas de habilidades e experiências em cascata, dando uma sensação de profundidade sem sobrecarregar o usuário. O componente `CodeBackground` usa uma animação CSS pura (`scroll-code`) para o efeito de código rolando ao fundo da Hero section, evitando o overhead do JavaScript para algo puramente decorativo.
+`next-themes` com `attribute="class"` alterna o tema injetando uma classe no `<html>`. O tema padrão segue a preferência do sistema operacional. Dois conjuntos completos de CSS Custom Properties são definidos no `index.css`: tema claro com fundo quase branco, tema escuro com fundo preto puro (`#000`) para maior contraste.
 
-### Plugin Customizado: `vite-plugin-meta-images`
+### shadcn/ui — Componentes no Código, não como Dependência
 
-Criei um plugin Vite personalizado para atualizar dinamicamente as meta tags Open Graph (`og:image` e `twitter:image`) com a URL de deployment correta. Ele detecta variáveis de ambiente do ambiente de deploy e injeta a URL absoluta da imagem no HTML durante o build, garantindo que o preview do link funcione corretamente em redes sociais.
+shadcn/ui não é uma biblioteca instalada como pacote npm — os componentes são copiados diretamente para `src/components/ui/`. Apenas os 11 componentes efetivamente utilizados estão presentes no repositório. Isso mantém o bundle enxuto e dá controle total sobre o código de cada componente.
+
+**Componentes ui/ presentes:**
+`badge`, `button`, `card`, `dropdown-menu`, `form`, `input`, `label`, `textarea`, `toast`, `toaster`, `tooltip`
 
 ### Roteamento com Wouter
 
-Optei pelo Wouter em vez do React Router porque o portfólio tem apenas duas rotas (`/` e `*` para 404). O Wouter tem ~2kb minificado contra os ~50kb do React Router, e sua API é quase idêntica para casos de uso simples. Não faz sentido adicionar peso desnecessário.
+Wouter foi escolhido sobre o React Router por ter ~2 kb minificado contra os ~50 kb do React Router. O portfólio tem apenas duas rotas (`/` e 404), então não há motivo para carregar uma biblioteca de roteamento pesada.
 
 ### Formulário de Contato
 
-O formulário usa React Hook Form com resolução de schema Zod para validação tipada. A validação acontece no cliente com mensagens de erro localizadas por idioma. Como o projeto é estático (sem backend próprio), o envio pode ser integrado com serviços como EmailJS, Formspree ou similar.
+React Hook Form + Zod para validação tipada no cliente. O envio abre o cliente de e-mail do usuário via `mailto:`, sem necessidade de backend ou serviço externo. A validação é feita antes do envio e mensagens de erro são exibidas por campo.
 
-### Componentes UI com shadcn/ui
+### CodeBackground — Animação CSS Pura
 
-Escolhi o shadcn/ui porque não é uma biblioteca de componentes instalada como dependência — são componentes copiados diretamente para o código, totalmente sob meu controle. Isso significa que posso customizar cada componente sem lutar contra estilos externos ou versões de pacotes. O estilo `new-york` do shadcn/ui com `baseColor: neutral` se encaixa na paleta neutra que escolhi.
+O efeito visual de código rolando ao fundo da Hero e da seção de Skills é implementado com CSS puro (`animate-code-scroll` / `animate-code-scroll-reverse` definidos no `index.css`), sem JavaScript de animação em tempo de execução. Isso evita o overhead do Framer Motion para algo puramente decorativo e mantém a performance do scroll fluida.
+
+### Download de Currículo Localizado
+
+O botão de download na Hero detecta o idioma atual da interface via `i18n.language` e faz o download do PDF correspondente (`resume-pt.pdf`, `resume-en.pdf` ou `resume-es.pdf`) automaticamente, sem lógica adicional no componente.
+
+### Plugin Vite: `vite-plugin-meta-images`
+
+Plugin customizado que atualiza as meta tags `og:image` e `twitter:image` durante o build com a URL absoluta do ambiente de deploy (detectada via variáveis de ambiente do Replit). Garante que previews de link em redes sociais funcionem corretamente sem configuração manual.
 
 ---
 
@@ -111,59 +136,44 @@ Escolhi o shadcn/ui porque não é uma biblioteca de componentes instalada como 
 
 | Seção | Componente | Descrição |
 |---|---|---|
-| Hero | `Hero.tsx` | Apresentação principal com foto, cargo, botões de CTA e redes sociais |
-| Sobre | `About.tsx` | Breve bio com estatísticas de anos de experiência e projetos |
-| Habilidades | `Skills.tsx` | Grid com 21+ tecnologias organizadas por categoria com tooltips |
-| Experiência | `Experience.tsx` | Timeline de experiências profissionais, carrossel de educação e certificações |
-| Projetos | `Projects.tsx` | Carrossel de projetos em destaque com thumbnails, links e stack usada |
-| Contato | `Contact.tsx` | Formulário validado com campos de nome, e-mail e mensagem |
+| Hero | `Hero.tsx` | Apresentação com foto, cargo, CTA de currículo/contato e redes sociais |
+| Sobre | `About.tsx` | Bio com estatísticas de experiência e certificação |
+| Habilidades | `Skills.tsx` | Grid de tecnologias com tooltips |
+| Experiência | `Experience.tsx` | Timeline de experiências + carrossel de educação e certificações |
+| Projetos | `Projects.tsx` | Carrossel de projetos com thumbnail, stack, links de código e demo |
+| Contato | `Contact.tsx` | Formulário validado com envio via `mailto:` |
 | Footer | `Footer.tsx` | Links para redes sociais e créditos |
 
 ---
 
-## Como Executar Localmente
+## Como Rodar Localmente
 
-### Pré-requisitos
-
-- Node.js 20+
-- npm ou pnpm
-
-### Instalação
+**Pré-requisitos:** Node.js 20+
 
 ```bash
 # Clone o repositório
-git clone https://github.com/rodrigodebarros/meu-portifolio.git
-cd meu-portifolio
+git clone https://github.com/digonexs/portfolio-rodrigo.git
+cd portfolio-rodrigo
 
 # Instale as dependências
 npm install
-```
 
-### Desenvolvimento
-
-```bash
+# Inicie o servidor de desenvolvimento
 npm run dev
 ```
 
-O servidor de desenvolvimento inicia em `http://localhost:5173` com Hot Module Replacement (HMR) ativo.
+O servidor inicia em `http://localhost:5173` com Hot Module Replacement ativo.
 
-### Build de Produção
+### Outros comandos
 
 ```bash
+# Build de produção (output em /dist)
 npm run build
-```
 
-O output é gerado na pasta `/dist` na raiz do projeto.
-
-### Preview da Build
-
-```bash
+# Preview da build de produção
 npm run preview
-```
 
-### Verificação TypeScript
-
-```bash
+# Verificação de tipos TypeScript
 npm run check
 ```
 
@@ -171,32 +181,32 @@ npm run check
 
 ## Currículos
 
-Os currículos estão disponíveis em três idiomas na pasta `client/public/assets/`:
+Disponíveis em `client/public/assets/`:
 
-- `resume-pt.pdf` — Português
-- `resume-en.pdf` — Inglês
-- `resume-es.pdf` — Espanhol
+| Arquivo | Idioma |
+|---|---|
+| `resume-pt.pdf` | Português |
+| `resume-en.pdf` | Inglês |
+| `resume-es.pdf` | Espanhol |
 
-O botão de download na seção Hero detecta o idioma atual da interface e faz o download do PDF correspondente automaticamente.
-
----
-
-## Open Graph e SEO
-
-O arquivo `client/index.html` contém as meta tags Open Graph e Twitter Card configuradas para uma prévia adequada ao compartilhar o link em redes sociais. O plugin `vite-plugin-meta-images` garante que a URL da imagem de preview seja absoluta e correta no ambiente de deploy.
+O download é acionado pelo botão na Hero e seleciona automaticamente o PDF correspondente ao idioma ativo na interface.
 
 ---
 
-## Sobre Mim
+## SEO e Open Graph
 
-Sou Engenheiro de Software com mais de 4 anos de experiência, focado principalmente em backend com Java e Spring Boot. Trabalho com arquiteturas de microsserviços, DDD, Clean Architecture e sistemas distribuídos em projetos de grande escala como Comgás e Bradesco. Este portfólio é minha vitrine pública e está em constante evolução.
+`client/index.html` contém as meta tags `og:title`, `og:description`, `twitter:card` e `twitter:title` configuradas. O plugin `vite-plugin-meta-images` injeta a URL absoluta da imagem Open Graph durante o build em ambientes de deploy com as variáveis `REPLIT_INTERNAL_APP_DOMAIN` ou `REPLIT_DEV_DOMAIN`.
 
-- LinkedIn: [linkedin.com/in/rodrigo-de-barros](https://linkedin.com/in/rodrigo-de-barros)
-- GitHub: [github.com/rodrigodebarros](https://github.com/rodrigodebarros)
-- E-mail: rodrigodebarros.dev@gmail.com
+---
+
+## Contato
+
+- **LinkedIn:** [linkedin.com/in/rodrigocavalcantedebarros](https://www.linkedin.com/in/rodrigocavalcantedebarros/)
+- **GitHub:** [github.com/digonexs](https://github.com/digonexs)
+- **E-mail:** rodrigocavalcantedebarros@hotmail.com
 
 ---
 
 ## Licença
 
-MIT — fique à vontade para usar este projeto como referência ou inspiração para o seu próprio portfólio.
+MIT

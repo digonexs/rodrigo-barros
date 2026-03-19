@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
 import { Github, Linkedin } from "lucide-react";
-import { SiX } from "react-icons/si";
 
 export function Footer() {
   const { t } = useTranslation();

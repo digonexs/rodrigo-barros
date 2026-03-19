@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Download, ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { SiX } from "react-icons/si";
 import { CodeBackground } from "./CodeBackground";
 
 export function Hero() {
